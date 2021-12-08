@@ -2,7 +2,7 @@
 
 ## How to run the application
 ### Installation
-1. Install [Python 3.6+](https://www.python.org/downloads/).
+1. Install [Python 3.9+](https://www.python.org/downloads/).
 2. Download the sources or clone this repository : ```git clone https://github.com/YaShuHee/openclassrooms_project_12```.
 3. Go at the project root : ```cd openclassrooms_project_12```.
 4. Create a virtual environment :
@@ -29,7 +29,7 @@ When you have finished using it, you can run ```deactivate``` to exit the virtua
 
 ## Comment lancer l'application
 ### Installation
-1. Installez [Python 3.6+](https://www.python.org/downloads/).
+1. Installez [Python 3.9+](https://www.python.org/downloads/).
 2. Téléchargez le code ou clone le dépôt : ```git clone https://github.com/YaShuHee/openclassrooms_project_12```.
 3. Allez à la racine du projet : ```cd openclassrooms_project_12```.
 4. Créez un environnement virtuel :
