@@ -19,10 +19,9 @@ When you have finished using it, you can run ```deactivate``` to exit the virtua
 1. Follow the previous installation steps.
 2. Go at the root of the project (.../openclassrooms_project_12/).
 3. Activate the virtual environment.
-4. Run ```python ./src/manage.py makemigrations```
-5. Run ```python ./src/manage.py migrate```
-6. Run ```python ./src/manage.py runserver```.
-7. You can now consult send request to the API at the address [http://localhost:8000/api/](http://localhost:8000/api/).
+4. Run ```python ./manage.py makemigrations```
+5. Run ```python ./manage.py migrate```
+6. Run ```python ./manage.py runserver```.
 
 
 # [FR] OpenClassrooms - Projet 12 :  EPIC Events - CRM
@@ -46,6 +45,6 @@ Quand vous avez fini de l'utiliser, vous pouvez désactiver l'environnement virt
 1. Suivez les étapes d'installation.
 2. Allez à la racine du projet (.../openclassrooms_project_12/).
 3. Activez l'environnement virtuel.
-4. Lancez la commande ```python ./src/manage.py makemigrations```.
-5. Lancez la commande ```python ./src/manage.py migrate```.
-6. Lancez la commande ```python ./src/manage.py runserver```.
+4. Lancez la commande ```python ./manage.py makemigrations```.
+5. Lancez la commande ```python ./manage.py migrate```.
+6. Lancez la commande ```python ./manage.py runserver```.
