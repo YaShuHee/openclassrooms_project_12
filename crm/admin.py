@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models import Team, TeamMember, Client, Contract, Event
+from .models import TeamMember, Client, Contract, Event
 
-admin.site.register(Team)
+
 admin.site.register(TeamMember)
 admin.site.register(Client)
 admin.site.register(Contract)

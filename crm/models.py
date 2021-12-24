@@ -5,21 +5,6 @@ from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractUser
 
 
-class Team(models.Model):
-    can_create_client = models.BooleanField()
-    can_read_client = models.BooleanField()
-    can_update_client = models.BooleanField()
-    can_delete_client = models.BooleanField()
-    can_create_contract = models.BooleanField()
-    can_read_contract = models.BooleanField()
-    can_update_contract = models.BooleanField()
-    can_delete_contract = models.BooleanField()
-    can_create_event = models.BooleanField()
-    can_read_event = models.BooleanField()
-    can_update_event = models.BooleanField()
-    can_delete_event = models.BooleanField()
-
-
 class TeamMemberManager(BaseUserManager):
     def create_user(self, first_name, last_name, email, password, phone, mobile, **extra_fields):
         if not email:
