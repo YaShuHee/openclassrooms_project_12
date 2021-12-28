@@ -71,7 +71,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
-AUTH_USER_MODEL = "crm.TeamMember"
+AUTH_USER_MODEL = "crm.User"
 
 AUTH_PASSWORD_VALIDATORS = [
     {

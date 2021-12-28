@@ -21,7 +21,8 @@ When you have finished using it, you can run ```deactivate``` to exit the virtua
 3. Activate the virtual environment.
 4. Run ```python ./manage.py makemigrations```
 5. Run ```python ./manage.py migrate```
-6. Run ```python ./manage.py runserver```.
+6. Run ```python ./manage.py loaddata auth_group.json```.
+7. Run ```python ./manage.py runserver```.
 
 
 # [FR] OpenClassrooms - Projet 12 :  EPIC Events - CRM
@@ -47,4 +48,5 @@ Quand vous avez fini de l'utiliser, vous pouvez désactiver l'environnement virt
 3. Activez l'environnement virtuel.
 4. Lancez la commande ```python ./manage.py makemigrations```.
 5. Lancez la commande ```python ./manage.py migrate```.
-6. Lancez la commande ```python ./manage.py runserver```.
+6. Lancez la commande ```python ./manage.py loaddata auth_group.json```.
+7. Lancez la commande ```python ./manage.py runserver```.

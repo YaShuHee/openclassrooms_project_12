@@ -1,0 +1,32 @@
+[
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "Selling team",
+      "permissions": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        21,
+        24
+      ]
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+      "name": "Support team",
+      "permissions": [
+        22,
+        24
+      ]
+    }
+  }
+]
