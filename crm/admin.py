@@ -6,6 +6,10 @@ from django.core.exceptions import ValidationError
 from .models import User, Client, Contract, ContractStatus, Event
 
 
+SELLING_TEAM_NAME = "Selling team"
+SUPPORT_TEAM_NAME = "Support team"
+
+
 class UserCreationForm(forms.ModelForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
@@ -71,6 +75,18 @@ class ClientAdmin(admin.ModelAdmin):
         else:
             return queryset.filter(contact=request.user)
 
+    def has_change_permission(self, request, obj=None):
+        user = request.user
+        has_permission = False
+
+        if obj:
+            if user.is_superuser:
+                has_permission = True
+            elif user.groups.filter(name=SELLING_TEAM_NAME).exists() and user.id == obj.contact.id:
+                has_permission = True
+
+        return has_permission
+
 
 class ContractAdmin(admin.ModelAdmin):
     def get_queryset(self, request):
@@ -82,6 +98,18 @@ class ContractAdmin(admin.ModelAdmin):
             return queryset
         else:
             return queryset.filter(client__contact=request.user)
+
+    def has_change_permission(self, request, obj=None):
+        user = request.user
+        has_permission = False
+
+        if obj:
+            if user.is_superuser:
+                has_permission = True
+            elif user.groups.filter(name=SELLING_TEAM_NAME).exists() and user.id == obj.client.contact.id:
+                has_permission = True
+
+        return has_permission
 
 
 class ContractStatusAdmin(admin.ModelAdmin):
@@ -95,6 +123,18 @@ class ContractStatusAdmin(admin.ModelAdmin):
         else:
             return queryset.filter(contract__client__contact=request.user)
 
+    def has_change_permission(self, request, obj=None):
+        user = request.user
+        has_permission = False
+
+        if obj:
+            if user.is_superuser:
+                has_permission = True
+            elif user.groups.filter(name=SELLING_TEAM_NAME).exists() and user.id == obj.contract.client.contact.id:
+                has_permission = True
+
+        return has_permission
+
 
 class EventAdmin(admin.ModelAdmin):
     def get_queryset(self, request):
@@ -106,6 +146,20 @@ class EventAdmin(admin.ModelAdmin):
             return queryset
         else:
             return queryset.filter(contract__client__contact=request.user)
+
+    def has_change_permission(self, request, obj=None):
+        user = request.user
+        has_permission = False
+
+        if obj:
+            if user.is_superuser:
+                has_permission = True
+            elif user.groups.filter(name=SELLING_TEAM_NAME).exists() and user.id == obj.contract.client.contact.id:
+                has_permission = True
+            elif user.groups.filter(name=SUPPORT_TEAM_NAME).exists() and user.id == obj.support_contact.id:
+                has_permission = True
+
+        return has_permission
 
 
 admin.site.register(User, UserAdmin)
