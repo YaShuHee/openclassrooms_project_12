@@ -46,7 +46,7 @@ class UserAdmin(BaseUserAdmin):
     fieldsets = (
         (None, {"fields": ("email", "password")}),
         ("Informations", {"fields": ("first_name", "last_name", "phone", "mobile",)}),
-        ("Permissions", {"fields": ("is_staff", "groups")}),
+        ("Permissions", {"fields": ("is_staff", "groups", "is_superuser", "user_permissions")}),
     )
 
     add_fieldsets = (
@@ -60,8 +60,56 @@ class UserAdmin(BaseUserAdmin):
     filter_horizontal = ()
 
 
+class ClientAdmin(admin.ModelAdmin):
+    def get_queryset(self, request):
+        queryset = super(ClientAdmin, self).get_queryset(request)
+        print("\n\n\n", request.resolver_match.func.__name__, "\n\n\n")
+        if request.user.is_superuser:
+            return queryset
+        elif request.resolver_match.func.__name__ in ["changelist_view", "change_view"]:
+            return queryset
+        else:
+            return queryset.filter(contact=request.user)
+
+
+class ContractAdmin(admin.ModelAdmin):
+    def get_queryset(self, request):
+        queryset = super(ContractAdmin, self).get_queryset(request)
+        print("\n\n\n", request.resolver_match.func.__name__, "\n\n\n")
+        if request.user.is_superuser:
+            return queryset
+        elif request.resolver_match.func.__name__ in ["changelist_view", "change_view"]:
+            return queryset
+        else:
+            return queryset.filter(client__contact=request.user)
+
+
+class ContractStatusAdmin(admin.ModelAdmin):
+    def get_queryset(self, request):
+        queryset = super(ContractStatusAdmin, self).get_queryset(request)
+        print("\n\n\n", request.resolver_match.func.__name__, "\n\n\n")
+        if request.user.is_superuser:
+            return queryset
+        elif request.resolver_match.func.__name__ in ["changelist_view", "change_view"]:
+            return queryset
+        else:
+            return queryset.filter(contract__client__contact=request.user)
+
+
+class EventAdmin(admin.ModelAdmin):
+    def get_queryset(self, request):
+        queryset = super(EventAdmin, self).get_queryset(request)
+        print("\n\n\n", request.resolver_match.func.__name__, "\n\n\n")
+        if request.user.is_superuser:
+            return queryset
+        elif request.resolver_match.func.__name__ in ["changelist_view", "change_view"]:
+            return queryset
+        else:
+            return queryset.filter(contract__client__contact=request.user)
+
+
 admin.site.register(User, UserAdmin)
-admin.site.register(Client)
-admin.site.register(Contract)
-admin.site.register(ContractStatus)
-admin.site.register(Event)
+admin.site.register(Client, ClientAdmin)
+admin.site.register(Contract, ContractAdmin)
+admin.site.register(ContractStatus, ContractStatusAdmin)
+admin.site.register(Event, EventAdmin)

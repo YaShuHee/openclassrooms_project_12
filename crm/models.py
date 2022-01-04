@@ -67,12 +67,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return f"{self.first_name} {self.last_name} ({self.email})"
 
-    def has_perm(self, perm, obj=None):
-        return True
-
-    def has_module_perms(self, app_label):
-        return True
-
 
 class Client(models.Model):
 
@@ -115,6 +109,9 @@ class ContractStatus(models.Model):
     state_note = models.TextField(max_length=2000)
     contract = models.ForeignKey(to="Contract", on_delete=models.CASCADE, related_name="status")
 
+    def __str__(self):
+        return f"{'☑' if self.is_accepted else '☒'} {self.contract.reference} ({self.state})"
+
 
 class Contract(models.Model):
 
@@ -130,7 +127,7 @@ class Contract(models.Model):
     client = models.ForeignKey(to="Client", on_delete=models.CASCADE, related_name="contracts")
 
     def __str__(self):
-        return f"{self.amount} (-> {self.payment_due})"
+        return f"{self.reference}"
 
 
 class Event(models.Model):
@@ -145,6 +142,10 @@ class Event(models.Model):
     end_date = models.DateTimeField()
     note = models.TextField(max_length=2000)
     contract = models.ForeignKey(to="Contract", on_delete=models.CASCADE, related_name="events")
+    support_contact = models.ForeignKey(to="Client", on_delete=models.DO_NOTHING, related_name="events")
 
     def __str__(self):
-        return f"{self.start_date} - {self.end_date} ({self.attendees} attendees)"
+        if self.start_date.date() == self.end_date.date():
+            return f"{self.name} ({self.start_date.date()}, {self.start_date.hour}:{str(self.start_date.minute).zfill(2)} to {self.end_date.hour}:{str(self.end_date.minute).zfill(2)}) : {self.attendees} attendees"
+        else:
+            return f"{self.name} ({self.start_date.date()} to {self.end_date.date()}) : {self.attendees} attendees"
