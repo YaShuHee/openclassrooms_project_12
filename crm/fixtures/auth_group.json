@@ -5,16 +5,18 @@
     "fields": {
       "name": "Selling team",
       "permissions": [
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        21,
-        24
+        ["add_client", "crm", "client"],
+        ["view_client", "crm", "client"],
+        ["change_client", "crm", "client"],
+        ["add_contract", "crm", "contract"],
+        ["view_contract", "crm", "contract"],
+        ["change_contract", "crm", "contract"],
+        ["add_contractstatus", "crm", "contractstatus"],
+        ["view_contractstatus", "crm", "contractstatus"],
+        ["change_contractstatus", "crm", "contractstatus"],
+        ["add_event", "crm", "event"],
+        ["view_event", "crm", "event"],
+        ["change_event", "crm", "event"]
       ]
     }
   },
@@ -24,8 +26,12 @@
     "fields": {
       "name": "Support team",
       "permissions": [
-        22,
-        24
+        ["view_client", "crm", "client"],
+        ["view_contract", "crm", "contract"],
+        ["view_contractstatus", "crm", "contractstatus"],
+        ["add_event", "crm", "event"],
+        ["view_event", "crm", "event"],
+        ["change_event", "crm", "event"]
       ]
     }
   }
