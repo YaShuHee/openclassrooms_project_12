@@ -142,10 +142,11 @@ class Event(models.Model):
     end_date = models.DateTimeField()
     note = models.TextField(max_length=2000)
     contract = models.ForeignKey(to="Contract", on_delete=models.CASCADE, related_name="events")
-    support_contact = models.ForeignKey(to="Client", on_delete=models.DO_NOTHING, related_name="events")
+    support_contact = models.ForeignKey(to="User", on_delete=models.DO_NOTHING, related_name="events")
 
     def __str__(self):
         if self.start_date.date() == self.end_date.date():
-            return f"{self.name} ({self.start_date.date()}, {self.start_date.hour}:{str(self.start_date.minute).zfill(2)} to {self.end_date.hour}:{str(self.end_date.minute).zfill(2)}) : {self.attendees} attendees"
+            start, end = self.start_date, self.end_date
+            return f"{self.name} ({start.date()}, {start:%H:%M} to {end:%H:%M}) : {self.attendees} attendees"
         else:
             return f"{self.name} ({self.start_date.date()} to {self.end_date.date()}) : {self.attendees} attendees"
