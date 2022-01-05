@@ -87,6 +87,11 @@ class ClientAdmin(admin.ModelAdmin):
 
         return has_permission
 
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "contact":
+            kwargs["queryset"] = User.objects.filter(groups__name=SELLING_TEAM_NAME)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
+
 
 class ContractAdmin(admin.ModelAdmin):
     def get_queryset(self, request):
@@ -160,6 +165,11 @@ class EventAdmin(admin.ModelAdmin):
                 has_permission = True
 
         return has_permission
+
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "support_contact":
+            kwargs["queryset"] = User.objects.filter(groups__name=SUPPORT_TEAM_NAME)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 
 admin.site.register(User, UserAdmin)
