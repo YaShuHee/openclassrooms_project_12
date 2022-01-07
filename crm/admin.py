@@ -4,10 +4,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 from .models import User, Client, Contract, ContractStatus, Event
-
-
-SELLING_TEAM_NAME = "Selling team"
-SUPPORT_TEAM_NAME = "Support team"
+from .constants import SELLING_TEAM_NAME, SUPPORT_TEAM_NAME
 
 
 class UserCreationForm(forms.ModelForm):
