@@ -15,5 +15,3 @@ venv.bak/
 # IDE config files/directories
 .idea
 .vscode
-
-migrations
