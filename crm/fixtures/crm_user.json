@@ -1,0 +1,174 @@
+[
+  {
+    "model": "crm.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$rp8wY3MqNEqjEANRnBfurb$+VM/Pvb6Gaj0G96x0qg2KDLCfJgrppFjrJcm684DlYI=",
+      "last_login": "2022-01-11T06:24:35.018Z",
+      "email": "crm_admin@epic-events.com",
+      "first_name": "admin",
+      "last_name": "admin",
+      "phone": null,
+      "mobile": null,
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": true,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "crm.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$rp8wY3MqNEqjEANRnBfurb$+VM/Pvb6Gaj0G96x0qg2KDLCfJgrppFjrJcm684DlYI=",
+      "last_login": null,
+      "email": "lucian.barnes@epic-events.com",
+      "first_name": "Lucian",
+      "last_name": "Barnes",
+      "phone": "0633445566",
+      "mobile": null,
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "groups": [
+        [
+          "Selling team"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "crm.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$FKwzA7yRSvtrpITOnHhTLT$SkGHEU8hvvqOGPI2+MAVvGABI9/hBSd4/hCGEvGYcLs=",
+      "last_login": null,
+      "email": "luisa.callahan@epic-events.com",
+      "first_name": "Luisa",
+      "last_name": "Callahan",
+      "phone": "0633445566",
+      "mobile": null,
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "groups": [
+        [
+          "Support team"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "crm.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$rp8wY3MqNEqjEANRnBfurb$+VM/Pvb6Gaj0G96x0qg2KDLCfJgrppFjrJcm684DlYI=",
+      "last_login": null,
+      "email": "nadia.hollis@epic-events.com",
+      "first_name": "Nadia",
+      "last_name": "Hollis",
+      "phone": "0633445566",
+      "mobile": null,
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "groups": [
+        [
+          "Selling team"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "crm.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$rp8wY3MqNEqjEANRnBfurb$+VM/Pvb6Gaj0G96x0qg2KDLCfJgrppFjrJcm684DlYI=",
+      "last_login": null,
+      "email": "logan.thompson@epic-events.com",
+      "first_name": "Logan",
+      "last_name": "Thompson",
+      "phone": "0633445566",
+      "mobile": null,
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "groups": [
+        [
+          "Support team"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "crm.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$rp8wY3MqNEqjEANRnBfurb$+VM/Pvb6Gaj0G96x0qg2KDLCfJgrppFjrJcm684DlYI=",
+      "last_login": null,
+      "email": "garfield.dolan@epic-events.com",
+      "first_name": "Garfield",
+      "last_name": "Dolan",
+      "phone": "0633445566",
+      "mobile": null,
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "groups": [
+        [
+          "Selling team"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "crm.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$rp8wY3MqNEqjEANRnBfurb$+VM/Pvb6Gaj0G96x0qg2KDLCfJgrppFjrJcm684DlYI=",
+      "last_login": null,
+      "email": "nichole.sandoval@epic-events.com",
+      "first_name": "Nichole",
+      "last_name": "Sandoval",
+      "phone": "0633445566",
+      "mobile": null,
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "groups": [
+        [
+          "Support team"
+        ]
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "crm.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$rp8wY3MqNEqjEANRnBfurb$+VM/Pvb6Gaj0G96x0qg2KDLCfJgrppFjrJcm684DlYI=",
+      "last_login": null,
+      "email": "nimra.gomez@epic-events.com",
+      "first_name": "Nimra",
+      "last_name": "Gomez",
+      "phone": "0633445566",
+      "mobile": null,
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": false,
+      "groups": [
+        [
+          "Selling team"
+        ]
+      ],
+      "user_permissions": []
+    }
+  }
+]
