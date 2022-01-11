@@ -92,6 +92,23 @@ class Client(models.Model):
             raise ValidationError("At least one phone number must be set.")
 
 
+class Contract(models.Model):
+
+    class Meta:
+        verbose_name = "Contract"
+        verbose_name_plural = "Contracts"
+
+    reference = models.CharField(max_length=20)
+    amount = models.DecimalField(max_digits=9, decimal_places=2)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_updated = models.DateTimeField(auto_now_add=True)
+    payment_due = models.DateTimeField()
+    client = models.ForeignKey(to="Client", on_delete=models.CASCADE, related_name="contracts")
+
+    def __str__(self):
+        return f"{self.reference}"
+
+
 class ContractStatus(models.Model):
 
     class Meta:
@@ -111,23 +128,6 @@ class ContractStatus(models.Model):
 
     def __str__(self):
         return f"{'☑' if self.is_accepted else '☒'} {self.contract.reference} ({self.state})"
-
-
-class Contract(models.Model):
-
-    class Meta:
-        verbose_name = "Contract"
-        verbose_name_plural = "Contracts"
-
-    reference = models.CharField(max_length=20)
-    amount = models.DecimalField(max_digits=9, decimal_places=2)
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_updated = models.DateTimeField(auto_now_add=True)
-    payment_due = models.DateTimeField()
-    client = models.ForeignKey(to="Client", on_delete=models.CASCADE, related_name="contracts")
-
-    def __str__(self):
-        return f"{self.reference}"
 
 
 class Event(models.Model):
