@@ -4,6 +4,16 @@ from .constants import SELLING_TEAM_NAME, SUPPORT_TEAM_NAME
 from .models import Client, Contract, ContractStatus, Event, User
 
 
+# USER SERIALIZER -------------------------------------------------------------
+
+class UserSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["id", "first_name", "last_name"]
+
+
+# CLIENT SERIALIZER -----------------------------------------------------------
+
 class ClientSerializer(ModelSerializer):
     contact = SlugRelatedField(
         queryset=User.objects.filter(groups__name=SELLING_TEAM_NAME),

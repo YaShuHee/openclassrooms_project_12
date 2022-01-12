@@ -1,8 +1,9 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAdminUser
 
-from .serializers import ClientSerializer, ContractSerializer, ContractStatusSerializer, EventSerializer
-from .models import Client, Contract, ContractStatus, Event
+from .constants import SELLING_TEAM_NAME, SUPPORT_TEAM_NAME
+from .serializers import UserSerializer, ClientSerializer, ContractSerializer, ContractStatusSerializer, EventSerializer
+from .models import User, Client, Contract, ContractStatus, Event
 from .permissions import (
     IsSuperUser,
     ClientListPermission, ClientDetailPermission,
@@ -10,6 +11,17 @@ from .permissions import (
     ContractStatusListPermission, ContractStatusDetailPermission,
     EventListPermission, EventDetailPermission
 )
+
+
+# USER LIST VIEW --------------------------------------------------------------
+
+class UserList(generics.ListAPIView):
+    serializer_class = UserSerializer
+    queryset = sorted(
+        User.objects.all().filter(groups__name__in=[SELLING_TEAM_NAME, SUPPORT_TEAM_NAME]),
+        key=lambda user: user.id
+    )
+    permission_classes = [IsSuperUser | IsAdminUser]
 
 
 # CLIENT VIEWS ----------------------------------------------------------------
