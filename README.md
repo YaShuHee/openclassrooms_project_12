@@ -1,52 +1,89 @@
-# [EN] OpenClassrooms - Project 12 : EPIC Events - CRM
+# OpenClassrooms - Project 12 : EPIC Events - CRM
 
-## How to run the application
-### Installation
-1. Install [Python 3.9+](https://www.python.org/downloads/).
-2. Download the sources or clone this repository : ```git clone https://github.com/YaShuHee/openclassrooms_project_12```.
-3. Go at the project root : ```cd openclassrooms_project_12```.
-4. Create a virtual environment :
+## Installation
+
+### Python
+Install [Python 3.9+](https://www.python.org/downloads/).
+
+### PostgreSQL
+Install [PostgreSQL 12+](https://www.postgresql.org/download/).
+
+### Source code
+Download the sources or clone this repository : ```git clone https://github.com/YaShuHee/openclassrooms_project_12```.
+
+## Project setup
+### Virtual environment
+* Go to the project root : ```cd openclassrooms_project_12```.
+* Create a virtual environment :
     - on Windows : ```py -3 -m venv env```,
     - on Linux/macOS : ```python -m venv env```.
-5. Activate the virtual environment :
+* Activate the virtual environment :
     - on windows (from [PowerShell](https://docs.microsoft.com/fr-fr/powershell/)): ```. .\env\Scripts\activate```,
     - on Linux/macOS : ```. ./env/bin/activate```.
-6. Install the project dependencies in the virtual environment : ```pip install -r requirements.txt```.
-7. You can now activate the virtual environment you just created each time you need to run the app.
+* Install the project dependencies in the virtual environment : ```pip install -r requirements.txt```.
+* You can now activate the virtual environment you just created each time you need to run the app.
 When you have finished using it, you can run ```deactivate``` to exit the virtual environment.
 
-### Execution
-1. Follow the previous installation steps.
-2. Go at the root of the project (.../openclassrooms_project_12/).
-3. Activate the virtual environment.
-4. Run ```python ./manage.py makemigrations```
-5. Run ```python ./manage.py migrate```
-6. If you want to prepopulate the database with user, run ```python ./manage.py loaddata crm_user.json```.
-7. Run ```python ./manage.py runserver```.
+### Database creation
+* [Create a database](https://www.tutorialspoint.com/postgresql/postgresql_create_database.htm) for the application.
+* You will need the database name, the username and password you just set up for the next step.
 
+### Settings
+* This python project uses [python-decouple](https://pypi.org/project/python-decouple/) to prevent from sharing accidentally sensitive information (as secret keys), and to manage environments specificities (production VS developpment) in a simple file, no matter what OS you use.
+* Create a file named '.env' at the root of the project ('openclassrooms_project_12/').
+* Fill the file with all the variables mentioned next. You can modify the values. They don't need quote marks.
+```
+SECRET_KEY=g3n3r@T3_@_n3w_k3y
+DEBUG=True
+DB_NAME=previously_created_db_name
+DB_USER=previously_created_db_username
+DB_PASSWORD=previously_created_password
+DB_HOST=localhost
+DB_PORT=5432
+```
 
-# [FR] OpenClassrooms - Projet 12 :  EPIC Events - CRM
+### Application first run
+* Run ```python ./manage.py makemigrations```
+* Run ```python ./manage.py migrate```
+* If you want to prepopulate the database with users, run ```python ./manage.py loaddata crm_user.json```.
+* Run ```python ./manage.py runserver```.
 
-## Comment lancer l'application
-### Installation
-1. Installez [Python 3.9+](https://www.python.org/downloads/).
-2. Téléchargez le code ou clone le dépôt : ```git clone https://github.com/YaShuHee/openclassrooms_project_12```.
-3. Allez à la racine du projet : ```cd openclassrooms_project_12```.
-4. Créez un environnement virtuel :
-    - sur Windows : ```py -3 -m venv env```,
-    - sur Linux/macOS : ```python -m venv env```.
-5. Activez l'environnement virtuel :
-    - sur windows (dans [PowerShell](https://docs.microsoft.com/fr-fr/powershell/)): ```. .\env\Scripts\activate```,
-    - sur Linux/macOS : ```. ./env/bin/activate```.
-6. Installez les dépendances du projet dans l'environnement virtuel : ```pip install -r requirements.txt```.
-7. Vous pouvez maintenant activer l'environnement virtuel que vous venez de créer à chaque fois que vous avez besoin d'exécuter l'application.
-Quand vous avez fini de l'utiliser, vous pouvez désactiver l'environnement virtuel avec la commande  ```deactivate```.
+## Test the application
+### Get a username and a password
+#### Solution 1 : Use the prepopulated users
+* Their password is 'uns4f3pass'. To get their username (it is their email) and group, check into the 'crm/fixtures/crm_user.json' file. 
 
-### Exécution
-1. Suivez les étapes d'installation.
-2. Allez à la racine du projet (.../openclassrooms_project_12/).
-3. Activez l'environnement virtuel.
-4. Lancez la commande ```python ./manage.py makemigrations```.
-5. Lancez la commande ```python ./manage.py migrate```.
-6. Si vous voulez peupler la base de données avec des utilisateurs, lancez la commande ```python ./manage.py loaddata crm_user.json```.
-7. Lancez la commande ```python ./manage.py runserver```.
+#### Solution 2 : Create your own super user
+* Run ```python ./manage.py createsuperuser``` to create a super user.
+
+### Test the admin interface
+* Log into [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).
+
+### Test the API
+#### Endpoints :
+List of the endpoints :
+ * clients list : [http://127.0.0.1:8000/api/v1/client/](http://127.0.0.1:8000/api/v1/client/)
+ * detail for the client with pk=1 : [http://127.0.0.1:8000/api/v1/client/1/](http://127.0.0.1:8000/api/v1/client/1/)
+ * contracts list : [http://127.0.0.1:8000/api/v1/contract/](http://127.0.0.1:8000/api/v1/contract/)
+ * detail for the contracts with pk=1 : [http://127.0.0.1:8000/api/v1/contract/1/](http://127.0.0.1:8000/api/v1/contract/1/)
+ * contract status list : [http://127.0.0.1:8000/api/v1/contract_status/](http://127.0.0.1:8000/api/v1/contract_status/)
+ * detail for the contract status with pk=1 : [http://127.0.0.1:8000/api/v1/contract_status/1/](http://127.0.0.1:8000/api/v1/contract_status/1/)
+ * events list : [http://127.0.0.1:8000/api/v1/event/](http://127.0.0.1:8000/api/v1/event/)
+ * detail for the events with pk=1 : [http://127.0.0.1:8000/api/v1/event/1/](http://127.0.0.1:8000/api/v1/event/1/)
+ * users list : [http://127.0.0.1:8000/api/v1/user/](http://127.0.0.1:8000/api/v1/user/)
+
+#### Solution 1 : from the DRF web interface
+* Log into [http://127.0.0.1:8000/admin/login/](http://127.0.0.1:8000/admin/login/).
+* You can now check the endpoints.
+* Log out [http://127.0.0.1:8000/admin/logout/](http://127.0.0.1:8000/admin/logout/).
+
+#### Solution 2 : using Postman
+* Send a POST request to [http://127.0.0.1:8000/admin/login/](http://127.0.0.1:8000/admin/login/) with 'Body' as a 'form-data' with two keys :
+    - username,
+    - password.
+* Get the value of 'csrftoken' in the answer 'Cookies'. From now, pass it to the 'Headers' of every request you send to the API, using the key 'X-CSRFToken'.
+* You can now send requests to the endpoints.
+    - List endpoints (without the primary key in URL) accept GET and POST requests.
+    - Detail endpoints (with the primary key in URL) accept GET, PUT and DELETE requests.
+    - Only super user can use DELETE requests.
+* To log out, just send a POST request to [http://127.0.0.1:8000/admin/logout/](http://127.0.0.1:8000/admin/logout/).
