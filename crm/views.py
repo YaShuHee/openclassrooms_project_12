@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, filters
 from rest_framework.permissions import IsAdminUser
 
 from .constants import SELLING_TEAM_NAME, SUPPORT_TEAM_NAME
@@ -30,6 +30,8 @@ class ClientList(generics.ListCreateAPIView):
     serializer_class = ClientSerializer
     queryset = Client.objects.all()
     permission_classes = [IsSuperUser | (IsAdminUser & ClientListPermission)]
+    filter_backends = [filters.SearchFilter]
+    search_fields = ["first_name", "last_name", "email"]
 
 
 class ClientDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -44,6 +46,11 @@ class ContractList(generics.ListCreateAPIView):
     serializer_class = ContractSerializer
     queryset = Contract.objects.all()
     permission_classes = [IsSuperUser | (IsAdminUser & ContractListPermission)]
+    filter_backends = [filters.SearchFilter]
+    search_fields = [
+        "client__first_name", "client__last_name", "client__email",
+        "date_created", "date_updated", "amount"
+    ]
 
 
 class ContractDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -72,6 +79,11 @@ class EventList(generics.ListCreateAPIView):
     serializer_class = EventSerializer
     queryset = Event.objects.all()
     permission_classes = [IsSuperUser | (IsAdminUser & EventListPermission)]
+    filter_backends = [filters.SearchFilter]
+    search_fields = [
+        "contract__client__first_name", "contract__client__last_name", "contract__client__email",
+        "start_date", "end_date"
+    ]
 
 
 class EventDetail(generics.RetrieveUpdateDestroyAPIView):
