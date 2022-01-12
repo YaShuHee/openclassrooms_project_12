@@ -1,10 +1,15 @@
-from rest_framework.serializers import ModelSerializer, ValidationError
+from rest_framework.serializers import ModelSerializer, ValidationError, SlugRelatedField
 
 from .constants import SELLING_TEAM_NAME, SUPPORT_TEAM_NAME
 from .models import Client, Contract, ContractStatus, Event, User
 
 
 class ClientSerializer(ModelSerializer):
+    contact = SlugRelatedField(
+        queryset=User.objects.filter(groups__name=SELLING_TEAM_NAME),
+        slug_field="id"
+    )
+
     class Meta:
         model = Client
         fields = "__all__"
@@ -16,6 +21,8 @@ class ClientSerializer(ModelSerializer):
             return value
         raise ValidationError("The 'contact' must be a Selling Team member.")
 
+
+# CONTRACT SERIALIZER ---------------------------------------------------------
 
 class ContractSerializer(ModelSerializer):
     class Meta:
@@ -30,6 +37,11 @@ class ContractStatusSerializer(ModelSerializer):
 
 
 class EventSerializer(ModelSerializer):
+    support_contact = SlugRelatedField(
+        queryset=User.objects.filter(groups__name=SUPPORT_TEAM_NAME),
+        slug_field="id"
+    )
+
     class Meta:
         model = Event
         fields = "__all__"
