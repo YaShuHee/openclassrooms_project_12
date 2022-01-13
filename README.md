@@ -43,6 +43,7 @@ DB_PORT=5432
 ```
 
 ### Application first run
+/!\ If you meet an error while using 'makemigrations', comment 'UserList' class in crm/views.py and references to it in 'crm/urls.py' while you do 'makemigrations' and 'migrate'.
 * Run ```python ./manage.py makemigrations```
 * Run ```python ./manage.py migrate```
 * If you want to prepopulate the database with users, run ```python ./manage.py loaddata crm_user.json```.
@@ -87,3 +88,7 @@ List of the endpoints :
     - Detail endpoints (with the primary key in URL) accept GET, PUT and DELETE requests.
     - Only super user can use DELETE requests.
 * To log out, just send a POST request to [http://127.0.0.1:8000/admin/logout/](http://127.0.0.1:8000/admin/logout/).
+
+### Resest the API demo
+You can use the ```python manage.py hard_reset_demo``` to reset the demo.
+Check available options with ```python manage.py hard_reset_demo --help```.
