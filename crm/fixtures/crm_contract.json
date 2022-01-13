@@ -1,0 +1,86 @@
+[
+  {
+    "model": "crm.contract",
+    "pk": 1,
+    "fields": {
+      "reference": "Funnch, teambuilding",
+      "amount": "10000.00",
+      "date_created": "2022-01-13T10:46:57.011Z",
+      "date_updated": "2022-01-13T10:46:57.011Z",
+      "payment_due": "2022-02-08T12:00:00Z",
+      "client": 1
+    }
+  },
+  {
+    "model": "crm.contract",
+    "pk": 2,
+    "fields": {
+      "reference": "Funnch, party",
+      "amount": "20000.00",
+      "date_created": "2022-01-13T10:47:33.486Z",
+      "date_updated": "2022-01-13T10:47:33.486Z",
+      "payment_due": "2022-04-16T06:00:00Z",
+      "client": 1
+    }
+  },
+  {
+    "model": "crm.contract",
+    "pk": 3,
+    "fields": {
+      "reference": "Contal, #1",
+      "amount": "30000.00",
+      "date_created": "2022-01-13T10:48:12.189Z",
+      "date_updated": "2022-01-13T10:48:12.189Z",
+      "payment_due": "2021-10-12T12:00:00Z",
+      "client": 2
+    }
+  },
+  {
+    "model": "crm.contract",
+    "pk": 4,
+    "fields": {
+      "reference": "Contal, #2",
+      "amount": "3000.00",
+      "date_created": "2022-01-13T10:48:40.537Z",
+      "date_updated": "2022-01-13T10:48:40.537Z",
+      "payment_due": "2022-09-09T06:00:00Z",
+      "client": 2
+    }
+  },
+  {
+    "model": "crm.contract",
+    "pk": 5,
+    "fields": {
+      "reference": "Wildy, visit",
+      "amount": "2000.00",
+      "date_created": "2022-01-13T10:49:13.214Z",
+      "date_updated": "2022-01-13T10:49:13.214Z",
+      "payment_due": "2022-02-21T12:00:00Z",
+      "client": 4
+    }
+  },
+  {
+    "model": "crm.contract",
+    "pk": 6,
+    "fields": {
+      "reference": "Coold, f�vrier",
+      "amount": "15000.00",
+      "date_created": "2022-01-13T10:50:12.044Z",
+      "date_updated": "2022-01-13T10:50:12.044Z",
+      "payment_due": "2022-02-01T12:00:00Z",
+      "client": 7
+    }
+  },
+  {
+    "model": "crm.contract",
+    "pk": 7,
+    "fields": {
+      "reference": "Kinded, paintball",
+      "amount": "30000.00",
+      "date_created": "2022-01-13T10:51:01.368Z",
+      "date_updated": "2022-01-13T10:51:01.368Z",
+      "payment_due": "2022-03-18T12:00:00Z",
+      "client": 5
+    }
+  }
+]

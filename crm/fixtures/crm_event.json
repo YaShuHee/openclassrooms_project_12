@@ -1,0 +1,93 @@
+[
+  {
+    "model": "crm.event",
+    "pk": 1,
+    "fields": {
+      "name": "February teambuilding morning",
+      "attendees": 10,
+      "start_date": "2022-02-21T08:00:00Z",
+      "end_date": "2022-02-21T10:00:00Z",
+      "note": "February teambuilding morning, 2 hours.",
+      "contract": 1,
+      "support_contact": 3
+    }
+  },
+  {
+    "model": "crm.event",
+    "pk": 2,
+    "fields": {
+      "name": "March teambuilding morning",
+      "attendees": 10,
+      "start_date": "2022-03-21T08:00:00Z",
+      "end_date": "2022-03-21T10:00:00Z",
+      "note": "March teambuilding morning, 2h.",
+      "contract": 1,
+      "support_contact": 3
+    }
+  },
+  {
+    "model": "crm.event",
+    "pk": 3,
+    "fields": {
+      "name": "April teambuilding morning",
+      "attendees": 10,
+      "start_date": "2022-04-18T08:00:00Z",
+      "end_date": "2022-04-18T10:00:00Z",
+      "note": "April teambuilding morning, 2h.",
+      "contract": 1,
+      "support_contact": 3
+    }
+  },
+  {
+    "model": "crm.event",
+    "pk": 4,
+    "fields": {
+      "name": "Beer Museum visit",
+      "attendees": 42,
+      "start_date": "2022-02-22T12:00:00Z",
+      "end_date": "2022-02-22T18:00:00Z",
+      "note": "Visit of the Museum with a guide.",
+      "contract": 5,
+      "support_contact": 5
+    }
+  },
+  {
+    "model": "crm.event",
+    "pk": 5,
+    "fields": {
+      "name": "Contal, banquet #1",
+      "attendees": 50,
+      "start_date": "2021-08-18T19:00:00Z",
+      "end_date": "2022-08-18T23:00:00Z",
+      "note": "- Caterer\r\n- Decorator\r\n- Florist\r\n- Reception\r\n- Music",
+      "contract": 3,
+      "support_contact": 5
+    }
+  },
+  {
+    "model": "crm.event",
+    "pk": 6,
+    "fields": {
+      "name": "Contal, banquet #2",
+      "attendees": 90,
+      "start_date": "2021-09-30T18:00:00Z",
+      "end_date": "2021-10-01T01:00:00Z",
+      "note": "- Caterer\r\n- Decorator\r\n- Florist\r\n- Reception\r\n- Music",
+      "contract": 3,
+      "support_contact": 5
+    }
+  },
+  {
+    "model": "crm.event",
+    "pk": 7,
+    "fields": {
+      "name": "Contal, banquet #3",
+      "attendees": 120,
+      "start_date": "2021-11-10T18:00:00Z",
+      "end_date": "2021-11-10T23:30:00Z",
+      "note": "- Caterer\r\n- Decorator\r\n- Florist\r\n- Reception\r\n- Music",
+      "contract": 3,
+      "support_contact": 5
+    }
+  }
+]

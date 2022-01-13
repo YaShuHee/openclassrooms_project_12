@@ -1,0 +1,79 @@
+[
+  {
+    "model": "crm.contractstatus",
+    "pk": 1,
+    "fields": {
+      "is_accepted": true,
+      "acceptance_note": "Accepted, waiting for payment.",
+      "state": "S",
+      "state_note": "Team building once a month.",
+      "contract": 1
+    }
+  },
+  {
+    "model": "crm.contractstatus",
+    "pk": 2,
+    "fields": {
+      "is_accepted": false,
+      "acceptance_note": "Not accepted yet.\r\nNegotitating the price.",
+      "state": "P",
+      "state_note": "Not started yet",
+      "contract": 7
+    }
+  },
+  {
+    "model": "crm.contractstatus",
+    "pk": 3,
+    "fields": {
+      "is_accepted": true,
+      "acceptance_note": "Accepted, waiting for the signature and payment.",
+      "state": "P",
+      "state_note": "Start on 02-10.",
+      "contract": 6
+    }
+  },
+  {
+    "model": "crm.contractstatus",
+    "pk": 4,
+    "fields": {
+      "is_accepted": true,
+      "acceptance_note": "Accepted, signed and payed.",
+      "state": "S",
+      "state_note": "Visit of the Beer Museum the 02-22.",
+      "contract": 5
+    }
+  },
+  {
+    "model": "crm.contractstatus",
+    "pk": 5,
+    "fields": {
+      "is_accepted": false,
+      "acceptance_note": "Still negociating price.",
+      "state": "P",
+      "state_note": "Still discussing about organisation.",
+      "contract": 2
+    }
+  },
+  {
+    "model": "crm.contractstatus",
+    "pk": 6,
+    "fields": {
+      "is_accepted": true,
+      "acceptance_note": "We organise 3 banquets.",
+      "state": "E",
+      "state_note": "Finished.",
+      "contract": 3
+    }
+  },
+  {
+    "model": "crm.contractstatus",
+    "pk": 7,
+    "fields": {
+      "is_accepted": false,
+      "acceptance_note": "-",
+      "state": "P",
+      "state_note": "Still in discussion.",
+      "contract": 4
+    }
+  }
+]

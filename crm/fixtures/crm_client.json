@@ -1,0 +1,106 @@
+[
+  {
+    "model": "crm.client",
+    "pk": 1,
+    "fields": {
+      "first_name": "Todd",
+      "last_name": "Carlson",
+      "email": "todd.carlson@funnch.com",
+      "phone": "0633445566",
+      "mobile": null,
+      "company_name": "Funnch",
+      "contact": 2
+    }
+  },
+  {
+    "model": "crm.client",
+    "pk": 2,
+    "fields": {
+      "first_name": "Tina",
+      "last_name": "Carney",
+      "email": "tina.carney@contal.com",
+      "phone": "0633445566",
+      "mobile": null,
+      "company_name": "Contal",
+      "contact": 2
+    }
+  },
+  {
+    "model": "crm.client",
+    "pk": 3,
+    "fields": {
+      "first_name": "Scott",
+      "last_name": "Adkins",
+      "email": "scott.adkins@supern.fr",
+      "phone": "0633445566",
+      "mobile": null,
+      "company_name": "Supern",
+      "contact": 2
+    }
+  },
+  {
+    "model": "crm.client",
+    "pk": 4,
+    "fields": {
+      "first_name": "Niam",
+      "last_name": "Wormald",
+      "email": "niam.wormald@wildy.fr",
+      "phone": null,
+      "mobile": "0607080910",
+      "company_name": "Wildy",
+      "contact": 4
+    }
+  },
+  {
+    "model": "crm.client",
+    "pk": 5,
+    "fields": {
+      "first_name": "Amman",
+      "last_name": "Ruiz",
+      "email": "amman.ruiz@kinded.com",
+      "phone": null,
+      "mobile": "0607080910",
+      "company_name": "Kinded",
+      "contact": 6
+    }
+  },
+  {
+    "model": "crm.client",
+    "pk": 6,
+    "fields": {
+      "first_name": "Joe",
+      "last_name": "Freeman",
+      "email": "joe.freeman@cosmal.com",
+      "phone": null,
+      "mobile": "0607080910",
+      "company_name": "Cosmal",
+      "contact": 6
+    }
+  },
+  {
+    "model": "crm.client",
+    "pk": 7,
+    "fields": {
+      "first_name": "Aria",
+      "last_name": "Francis",
+      "email": "aria.francis@coold.fr",
+      "phone": null,
+      "mobile": "0607080910",
+      "company_name": "Coold",
+      "contact": 8
+    }
+  },
+  {
+    "model": "crm.client",
+    "pk": 8,
+    "fields": {
+      "first_name": "Harriet",
+      "last_name": "Farrington",
+      "email": "harriet.farrington@dotful.com",
+      "phone": null,
+      "mobile": "0607080910",
+      "company_name": "Dotful",
+      "contact": 6
+    }
+  }
+]

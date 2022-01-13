@@ -54,7 +54,7 @@ class Command(BaseCommand):
             print(start_message)
             if not user_confirmed():
                 return
-
+        """
         # saves all the actual data at 'crm/fixtures/last_saved.json' ---------
         print(separator + f"* Going to save you actual database content at {save_location}.")
         if options["askconfirmation"]:
@@ -65,6 +65,8 @@ class Command(BaseCommand):
         management.call_command(dumpdata.Command(), output="crm/fixtures/last_saved.json")
         print("☑ Database content was saved into the 'crm/fixtures/last_saved.json' file."
               "Use 'manage.py loaddata last_saved.json' to restore it.")
+        
+        """
 
         # removes the PostgreSQL public schema and recreate it ----------------
         print(separator + "* Going to drop public schema and to create another.")
@@ -110,6 +112,10 @@ class Command(BaseCommand):
             print(separator + "☐ Prepopulating database with demo data.")
             fixtures = (
                 "crm_user.json",
+                "crm_client.json",
+                "crm_contract.json",
+                "crm_contract_status.json",
+                "crm_event.json"
             )
             for file_name in fixtures:
                 print(f"☐ Loading {file_name} fixture.")
